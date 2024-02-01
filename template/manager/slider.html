@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/header.html' %}
+
+
+    <section id="category">
+        <section class="wrapper">
+    
+            <h1>Table</h1>
+            
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for slider in sliders %}
+                    <tr align="center">
+                        <td>{{slider.name}}</td>
+                        <td><img src="{{slider.image.url}}" alt="" width="100px"></td>
+                        <td>
+                            <a href="{% url 'manager:slider_edit' id=slider.id %}" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'manager:slider_del' id=slider.id %}" class="delete">Delete</a>
+                        </td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+      </section>
+
+      {% endblock %}

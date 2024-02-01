@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style2.css">
+</head>
+<body>
+    <section id="login">
+        <section class="wrapper">
+            <div class="container">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="logo">
+                        <img src="/static/image/c4a7f3d7baf7fe7e7323e9b222140ef8-removebg-preview.png" alt="logo" />
+                    </div>
+                    <h1>Create Account</h1>
+                    <div class="form-control">
+                        <input type="text" name="phone_number" id="" placeholder="phone_number">
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="first_name" id="" placeholder="Enter first name">
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="last_name" id="" placeholder="Enter last name">
+                    </div>
+                    <div class="form-control">
+                        <input type="password" name="password" id="" placeholder="Enter password">
+                    </div>
+                    <p>Already have an account? <a href="{% url 'customer:login' %}">Login</a></p>
+                    <div class="btn">
+                        <input type="submit" value="Register">
+                    </div>
+                </form>
+            </div>
+        </section>
+    </section>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base/custombase.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/customeheader.html' %}
+
+
+    <section id="product">
+        <section class="wrapper">
+            <h1>{{single.name}}</h1>
+            <img src="{{ single.image.url }}" alt="">
+            <p>{{single.description}}</p>
+            <a href="">Add to cart</a>
+
+        </section>
+    </section>
+
+    
+    {% endblock %}

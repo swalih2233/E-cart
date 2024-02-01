@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/header.html' %}
+
+    <section id="spotlight">
+        <section class="wrapper">
+            <div class="home">
+             <ul>
+                <li>
+                    <h2>Orders</h2>
+                    <span>Count: {{orders}}</span>
+                </li>
+
+                <li>
+                    <h2>Product</h2>
+                    <span>Count: {{products}}</span>
+                </li>
+
+                <li>
+                    <h2>Customer</h2>
+                    <span>Count: {{customers}}</span>
+                </li>
+
+                <li>
+                    <h2>Earnigs</h2>
+                    <span>Rs: 4050</span>
+                </li>
+             </ul>
+                
+            </div>
+        </section>
+    </section>
+    
+    {% endblock %}

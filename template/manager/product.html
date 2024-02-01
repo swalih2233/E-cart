@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/header.html' %}
+
+    <section id="category">
+        <section class="wrapper">
+    
+            <h1>Table</h1>
+            
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Sub Category</th>
+                        <th>Price</th>
+                        <th>image</th>
+                        <th>is stock</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in products %}
+                    <tr align="center">
+                        <td>{{product.name}}</td>
+                        <td>{{product.description}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.sub_category}}</td>
+                        <td>{{product.price}}</td>
+                        <td><img src="{{product.image.url}}" alt="" width="100px"></td>
+                        <td>{{product.is_stock}}</td>
+                        <td>
+                            <a href="{% url 'manager:product_edit' id=product.id %}" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'manager:product_del' id=product.id %}" class="delete">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+      </section>
+
+
+      {% endblock %}

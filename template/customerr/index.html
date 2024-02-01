@@ -1,0 +1,86 @@
+{% extends 'base/custombase.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/customeheader.html' %}
+ 
+<section id="middle">
+        <section class="wrapper">
+
+      
+            <h2>20<span>%</span>Offer on</h2>
+             
+            <div class="slideshow-container">
+            {% for slider in sliders %}
+            <div class="mySlides fade">
+            <div class="numbertext">1 / 3</div>
+            <img src="{{ slider.image.url }}" class="image">
+            <div class="text">{{slider.name}}</div>
+       
+
+            </div>
+            {% endfor %}
+           </div>
+        
+                    
+              
+                
+              
+                <br>
+        
+                <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                </div>
+            </section>
+</section>   <!--middle-end-->
+
+<section id="card">
+    <section class="wrapper">
+        <h1>Category</h1>
+       
+
+        <ul>
+            {% for category in categorys %}
+            <li>
+                <a href=""><img src="{{ category.image.url }}" alt=""></a>
+                <h3>{{category.name}}</h3>
+            </li>
+           
+        {% endfor %}
+            
+        </ul>
+
+       
+    </section>
+</section>
+
+<section id="center">
+
+    <section class="wrapper">
+      
+        <h1>Products List</h1>
+        <ul>
+        {% for product in products %}
+          
+            <li>
+             <a href="{% url 'customer:single' id=product.id %}"><img src="{{ product.image.url }}" alt=""></a> 
+                <div>
+                    <h2>{{product.name}}</h2>
+                    <h2>{{product.price}}</h2>
+                 
+                </div>
+                <a href="{% url 'customer:cart_add' id=product.id %}" class="add">Add to cart</a>
+            </li>
+            {% endfor %}
+
+        </ul>
+        
+ </section>
+
+</section>
+
+<script src="{% static 'index.js' %}"></script>
+
+
+{% endblock %}

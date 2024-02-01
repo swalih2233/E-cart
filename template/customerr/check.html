@@ -1,0 +1,51 @@
+{% extends 'base/custombase.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/customeheader.html' %}
+
+
+
+
+<section id="checkpage">
+    <section class="wrapper">
+        <div class="left">
+            <h1>Your Cart</h1>
+                    {% for order_item in order_items %}
+                    <div class="item1">
+                        <p>{{order_item.product.name}}</p>
+                        <span>{{order_item.amount}}</span>
+                    </div>
+                    {% endfor %}
+               
+
+
+            <h2></h2>
+            <div class="item2">
+                <p>Total items</p>
+                <span>{{order_item.items}}</span>
+            </div>
+
+            <div class="item2">
+                <p>Total Amount:</p>
+                <span>{{order_item.amount}}</span>
+            </div>
+          
+        </div>
+
+        <div class="right">
+      
+                <p>Enter your address</p>
+                <input type="text" placeholder="Address" class="address">
+    
+          
+
+            <p>Enter your pincode</p>
+            <input type="number" placeholder="Pincode" class="pincode"> <br>
+            <a href="">Order Now</a>
+        </div>
+
+    </section>
+</section>
+
+
+{% endblock %}

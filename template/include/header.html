@@ -1,0 +1,25 @@
+{% load static %}
+
+
+<section id="header">
+    <section class="wrapper">
+        <div class="menu">
+            <h1>
+                <a href="{% url 'manager:dashboard' %}">Admin</a>
+            </h1>
+            <ul>
+                <li><a href="{% url 'manager:slider' %}">Slider</a></li>
+                <li><a href="{% url 'manager:dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'manager:categories' %}">Categories</a></li>
+                <li><a href="{% url 'manager:sub_categories' %}">Sub Categories</a></li>
+                <li><a href="{% url 'manager:product' %}">Product</a></li>
+                <li><a href="{% url 'manager:customer' %}">Customer</a></li>
+                <li><a href="{% url 'manager:order' %}">Order</a></li>
+                {% if user.is_authenticated %}
+                <li><a href="{% url 'manager:logout' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'manager:login' %}">Login</a></li>
+                {% endif%}
+            </ul>
+        </div>
+    </section>

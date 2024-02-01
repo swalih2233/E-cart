@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+.wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+#header{
+    height: 70px;
+    background-color: rgb(97, 125, 150);
+    
+}
+#header .wrapper div.menu{
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    align-items: center;
+}
+#header .wrapper div.menu h1 a{
+    color: #fff;
+    font-size: 36px;
+    font-weight: 900;
+}
+#header .wrapper div.menu ul{
+    display: flex;
+}
+#header .wrapper div.menu ul li a{
+    margin-right: 30px;
+    color: #fff;
+    font-size: 20px;
+}
+#header .wrapper div.menu ul li a:hover{
+    color: aqua;
+}
+#spotlight{
+    background-color: #ddd;
+    height: 100vh;
+}
+#spotlight .wrapper div.home{}
+#spotlight .wrapper div.home ul{
+    display: flex;
+    justify-content: center;
+    padding: 30vh;
+    
+}
+#spotlight .wrapper div.home ul li{
+    margin-right: 30px;
+    height: 200px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(133, 133, 175);
+    
+}
+#spotlight .wrapper div.home ul li h2{
+    margin-bottom: 60px;
+    color: #fff;
+    border-bottom: 1px solid #504b4b;
+    margin-left: px;
+}
+#spotlight .wrapper div.home ul li h2 span{
+    font-size: 20px;
+    font-weight: 900;
+}
+#category{
+    height: 100vh;
+}
+#category .wrapper{
+  margin-top: 60px;
+}
+#category .wrapper h1{
+    margin-bottom: 50px;
+    font-size: 36px;
+}
+.form-controls{
+    padding: 30px;
+    
+}
+.form-control .btns{
+    padding: 8px 15px;
+    border-radius: 8px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+}
+table tbody tr td .edit{
+    background-color: rgb(255, 22, 22);
+    border-radius: 8px;
+    padding: 10px 20px;
+    color: #fff;
+}
+table tbody tr td .delete{
+    background-color: rgb(255, 36, 36);
+    border-radius: 8px;
+    padding: 8px 20px;
+    color: #fff;
+}
+#login{}
+
+#login .wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login .wrapper div.container{
+    width: 50%;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border: 1px solid #f1f1f1;
+    padding: 24px;
+}
+
+#login .wrapper div.container form{}
+
+#login .wrapper div.container form div.logo{
+    width: 180px;
+    margin: 0 auto;
+}
+
+#login .wrapper div.container form div.logo img{
+    width: 100%;
+    display: block;
+}
+
+#login .wrapper div.container form h1{
+    margin-top: 24px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+#login .wrapper div.container form div.form-control{
+    margin-bottom: 24px;
+    padding: 8px 16px;
+    border: 1px solid #e6e4e4;
+    border-radius: 8px;
+}
+
+#login .wrapper div.container form div.form-control input{
+    width: 100%;
+}
+
+#login .wrapper div.container form div.btn {
+    text-align: center;
+}
+
+#login .wrapper div.container form p{
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+#login .wrapper div.container form p a{
+    margin-right: 4px;
+    color: var(--red);
+    font-weight: 500;
+}
+
+#login .wrapper div.container form div.btn input{
+    padding: 8px 16px;
+    color: var(--white);
+    background-color: var(--red);
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+}

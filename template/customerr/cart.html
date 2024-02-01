@@ -1,0 +1,43 @@
+{% extends 'base/custombase.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/customeheader.html' %}
+   
+
+    <section id="cartpage">
+        <section class="wrapper">
+            {% for order_item in order_items %}
+                    <div class="one">
+                        <img src="{{ order_item.product.image.url }}" alt="">
+                        <span>{{order_item.amount}}</span>
+                    
+                    </div>
+                    <h4>{{order_item.product.name}}</h4>
+                <ul>
+                        <li>
+                            <a href="{% url 'customer:cart_minus' id=order_item.id %}">-</a>
+                        </li>
+                        <li>
+                        <p>{{order_item.qty}}</p>
+                        </li>
+                        <li>
+                            <a href="{% url 'customer:cart_plus' id=order_item.id %}">+</a>
+                        </li>
+                </ul>
+    {% endfor %}
+    
+
+
+        <div class="button">
+            <a href="{% url 'customer:check' %}">Check Out</a>
+        </div>
+    
+
+           
+            
+           
+        </section>
+    </section>
+
+    {% endblock %}
+    

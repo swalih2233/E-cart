@@ -1,0 +1,42 @@
+
+    {% extends 'base/base.html' %} {% block container %} {% load static %}
+
+
+    {% include 'include/header.html' %}
+
+    <section id="category">
+        <section class="wrapper">
+    
+            <h1>Table</h1>
+            
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Parent</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for subcategory in subcategorys %}
+                    <tr align="center">
+                        <td>{{subcategory.name}}</td>
+                        <td><img src="{{subcategory.image.url}}" alt="" width="100px"></td>
+                        <td>{{subcategory.parent}}</td>
+                        <td>
+                            <a href="{% url 'manager:sub_categories_edit' id=subcategory.id %}" class="edit">Edit</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'manager:sub_categories_del' id=subcategory.id %}" class="delete">Delete</a>
+                        </td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+      </section>
+
+      {% endblock %}

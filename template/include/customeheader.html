@@ -1,0 +1,20 @@
+  {% load static %}
+
+<section id="header">
+    <section class="wrapper">
+        <h1>
+            <a href="{% url 'customer:index' %}"><img src="{% static 'image/c4a7f3d7baf7fe7e7323e9b222140ef8-removebg-preview.png' %}" alt=""></a>
+        </h1>
+        <ul>
+            <li><a href="{% url 'customer:index' %}">Home</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="">Orders</a></li>
+            <li><a href="{% url 'customer:cart' %}"><img src="{% static 'image/bx-cart.svg' %}" alt="">Cart</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'customer:logout' %}" class="logout">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'customer:login' %}">Login</a></li>
+                {% endif%}
+        </ul>
+    </section>
+</section> <!--header-end-->

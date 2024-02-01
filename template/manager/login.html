@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %} {% block container %} {% load static %}
+
+    <section id="login">
+        <section class="wrapper">
+            <div class="container">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div class="logo">
+                        <img src="/static/image/c4a7f3d7baf7fe7e7323e9b222140ef8-removebg-preview.png" alt="logo" />
+                    </div>
+                    <h1>Login Now</h1>
+                    <div class="form-control" >
+                        <input type="text" name="phone_number" id="" placeholder="Enter phonenumber">
+                    </div>
+                    <div class="form-control">
+                        <input type="password" name="password" id="" placeholder="Enter password">
+                    </div>
+                    <p>Don't have an account? <a href="">Register</a></p>
+                    <div class="btn">
+                        <input type="submit" value="Login">
+                    </div>
+                </form>
+                {% if error %}
+                <p class="message">{{message}}</p>
+                {% endif %}
+            </div>
+        </section>
+    </section>
+     
+{% endblock %}
